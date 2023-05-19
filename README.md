@@ -35,4 +35,4 @@ main画面、start画面を整える。
 
 #### - JavaScript -
 - main.js\
-user.name の保持、秒数カウントダウン、入力の正誤判定、入力内容に沿った表示文字の変更（色、shi -> si等）
+user.name の保持、秒数カウントダウン、入力の正誤判定、入力内容に沿った表示文字の変更（色、shi -> si等）unti
