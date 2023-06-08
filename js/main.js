@@ -8,7 +8,7 @@ function page_transition(){
 
     /* user_name を取得して、クエリパラメータに渡す -------------- */
     const user_name = document.getElementById("user_name").value;
-    window.location.href = `main.html?user_name=${user_name}`; // 遷移したいURL
+    window.location.href = `start.html?user_name=${user_name}`; // 遷移したいURL
 
     /* 処理終了 ------------------------------------------------ */
     return ;
@@ -52,18 +52,38 @@ function show_text(){
 
     /* HTMLに反映する ----------------------------------------- */
     document.getElementById("text").innerHTML = text;
+    document.getElementById("text").value = alphabet;
     document.getElementById("alphabet").innerHTML = alphabet
 
     return ;
 }
 
 
-
 window.addEventListener("keypress",keypress);
 function keypress(e){
 
-    console.log(e.key)
+    console.log(e.key);
+    let text = document.getElementById("text").value;
+
     if (e.key == text[0]){
-        tex
+
+        if (text.length == 1){
+            ans_cnt++;
+            show_text();
+        }else{
+            text = text.slice(1,text.length)
+            document.getElementById("text").value = text;
+        }
+    }
+
+    if (ans_cnt == END){
+        alert("終わり");
+        ans_cnt = 0;
     }
 }
+
+/* 変数宣言 ----------------------------------------------- */
+let ans_cnt = 0;
+const END = 3
+
+show_text();
