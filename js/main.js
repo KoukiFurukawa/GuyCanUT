@@ -22,10 +22,10 @@ function page_transition(){
  * 引数　 : min, max -> int
  * 機能　 : ランダムな整数を返す関数
  * ------------------------------------------------------------ */
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    res = Math.floor(Math.random() * (max - min) + min);
+function getRandomInt(mn, mx) {
+    let min = Math.ceil(mn);
+    let max = Math.floor(mx);
+    const res = Math.floor(Math.random() * (max - min) + min);
     return res;
 }
   
@@ -58,4 +58,12 @@ function show_text(){
 }
 
 
-show_text()
+
+window.addEventListener("keypress",keypress);
+function keypress(e){
+
+    console.log(e.key)
+    if (e.key == text[0]){
+        tex
+    }
+}
