@@ -1,0 +1,29 @@
+.wrap {
+    display: block;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.text {
+    margin: 2% auto;
+}
+
+.user_input {
+    display: flex;
+    justify-content: center;
+}
+
+#past {
+    color: white;
+    background-color: black;
+}
+
+#future {
+    color: black;
+}
+
+p, #result {
+    text-align: center;
+    font-size: x-large;
+    margin-top: 3%;
+}
