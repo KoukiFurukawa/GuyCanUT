@@ -1,22 +1,4 @@
 /** ------------------------------------------------------------
- * 関数名 : page_transition
- * 戻り値 : なし
- * 引数　 : なし
- * 機能　 : main.html に遷移する。aタグを使わないのはCSSが嫌いだから
- * ------------------------------------------------------------ */
-function page_transition(){
-
-    /* user_name を取得して、クエリパラメータに渡す -------------- */
-    const user_name = document.getElementById("user_name").value;
-    window.location.href = `start.html?user_name=${user_name}`; // 遷移したいURL
-
-    /* 処理終了 ------------------------------------------------ */
-    return ;
-}
-
-
-
-/** ------------------------------------------------------------
  * 関数名 : getRandomInt
  * 戻り値 : randomInt
  * 引数　 : min, max -> int
@@ -56,6 +38,17 @@ function start_game(){
 }
 
 
+function getParam(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+
 
 /* 変数宣言 ----------------------------------------------- */
 let ans_cnt = 0;
@@ -69,7 +62,7 @@ const texts = [
 
 
 document.addEventListener("keydown", e => {
-    if (keygraph.next(e.key)){
+    if (keygraph.next(e.key) && document.getElementById("timer").textContent != "終了！"){
         if (keygraph.is_finished()){
             ans_cnt++;
             keygraph.reset()
@@ -82,7 +75,8 @@ document.addEventListener("keydown", e => {
 
 // 終了通知受け取り関数
 const endFunc = ()=>{
-    document.getElementById("result").innerHTML = `${ans_cnt}問 正解！`;
+    const user_name = getParam("user_name");
+    document.getElementById("result").innerHTML = `${user_name}さんの成績 \n ${ans_cnt}問 正解！`;
     document.getElementById("timer").textContent = "終了！"
 };
 

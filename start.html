@@ -13,8 +13,8 @@
 
     <div class="start">
         <input type="text" id="user_name" placeholder="なまえを入力">
-        <!-- <button type="button" onclick="page_transition()">開始</button> -->
-        <a href="main.html">開始！</a>
+        <button type="button" onclick="page_transition()">開始</button>
+        <!-- <a href="main.html">開始！</a> -->
     </div>
 
     <div class="discription">
@@ -23,6 +23,24 @@
         <p>2. 表示された文字を60秒間キーボードで入力</p>
         <p>3. 得点を友達と競ってみよう！</p>
     </div>
+
+    <script type="text/javascript">
+        /** ------------------------------------------------------------
+        * 関数名 : page_transition
+        * 戻り値 : なし
+        * 引数　 : なし
+        * 機能　 : main.html に遷移する。aタグを使わないのはCSSが嫌いだから
+        * ------------------------------------------------------------ */
+        function page_transition(){
+
+            /* user_name を取得して、クエリパラメータに渡す -------------- */
+            const user_name = document.getElementById("user_name").value;
+            window.location.href = `main.html?user_name=${user_name}`; // 遷移したいURL
+
+            /* 処理終了 ------------------------------------------------ */
+            return ;
+        }
+    </script>
 
 </body>
 </html>
