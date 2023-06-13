@@ -23,7 +23,13 @@ function start_game(){
 
     
     /* 入力するテキストを選択 -------------------------------- */
-    randInt = getRandomInt(0,texts.length);
+    while (true){
+        randInt = getRandomInt(0,texts.length);
+        if (randInt != back){
+            back = randInt;
+            break;
+        }
+    }
     let text = texts[randInt];
 
     /* テキストをセットし、アルファベットを取得 ---------------- */
@@ -52,7 +58,7 @@ function getParam(name, url) {
 
 /* 変数宣言 ----------------------------------------------- */
 let ans_cnt = 0;
-let randInt, query, tmp;
+let randInt, query, tmp, back;
 let point = 0;
 // const texts = [
 //     "こんにちは","さようなら","おはようございます",
