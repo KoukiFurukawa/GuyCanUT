@@ -2,6 +2,7 @@
     display: block;
     text-align: center;
     font-size: xx-large;
+    overflow-wrap: break-word;
 }
 
 .text {
