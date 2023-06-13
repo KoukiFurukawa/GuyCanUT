@@ -116,7 +116,11 @@ const endFunc = ()=>{
     const user_name = getParam("user_name");
     document.getElementById("result").innerHTML = `${user_name}さんの成績 \n ${ans_cnt}問 正解！`+
     `<br> ${point} ポイント！`;
-    document.getElementById("timer").textContent = "終了！"
+
+    const button = document.getElementById("again");
+    button.style.display = "block";
+    button.style.textAlign = "center"
+    document.getElementById("timer").textContent = "終了！";
 };
 
 
