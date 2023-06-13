@@ -475,7 +475,7 @@ const keygraph = {
         { char: "ちぃ", keys: ["tyi"] },
         { char: "ちゅ", keys: ["tyu", "chu"] },
         { char: "ちぇ", keys: ["tye", "che"] },
-        { char: "ちょ", keys: ["tyo", "cho"] },
+        { char: "ちょ", keys: ["tyo", "cho", "cyo"] },
         { char: "ぢゃ", keys: ["dya"] },
         { char: "ぢぃ", keys: ["dyi"] },
         { char: "ぢゅ", keys: ["dyu"] },
