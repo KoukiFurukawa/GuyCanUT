@@ -737,6 +737,7 @@ const keygraph = {
         { char: "9", keys: ["9"] },
         { char: "ー", keys: ["-"] },
         { char: "～", keys: ["-"] },
+        { char: "・", keys: ["・", "/"]},
         { char: "、", keys: [","] },
         { char: "。", keys: ["."] },
         { char: "#", keys: ["#"] },
