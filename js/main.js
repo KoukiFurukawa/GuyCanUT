@@ -37,6 +37,7 @@ function start_game(){
     tmp = keygraph.key_candidate();
 
     /* 取得したテキストを反映 */
+    document.getElementById("hiragana").innerHTML = text.key
     document.getElementById("text").innerHTML = text.char;
     document.getElementById("future").innerHTML = tmp;
 
@@ -79,7 +80,7 @@ const texts = [
     {char : "タコだから実質8又じゃん", key : "たこだからじっしつはちまたじゃん"},
     {char : "うかさんは約60又って事?", key : "うかさんはやくろくじゅうまたってこと?"},
     {char : "無敵のおしそ", key : "むてきのおしそ"},
-    {char : "おつかれサンダー", key : "おつかれサンダー"},
+    {char : "おつかれサンダー", key : "おつかれさんだー"},
     {char : "邪神たこと邪龍たこ", key : "じゃしんたことじゃりゅうたこ"},
     {char : "お大事にインターネットやめろ", key : "おだいじにいんたーねっとやめろ"},
     {char : "毎週火曜日火事パーティ", key : "まいしゅうかようびかじぱーてぃ"},
@@ -140,6 +141,13 @@ const endFunc = ()=>{
 };
 
 
+function main(){
 
-coutdownTimer( tickFunc , endFunc , 60 );
-start_game();
+    document.getElementById("text").textContent = "開始まで..."
+    // coutdownTimer(firstCountDown, firstEndCountDown, 3);
+
+    setTimeout(start_game, 3000);
+    setTimeout(coutdownTimer( tickFunc , endFunc , 63 ),3000);
+}
+
+main();

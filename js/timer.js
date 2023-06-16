@@ -31,11 +31,26 @@ const coutdownTimer =  ( tickCallBack , endCallBack,
             tickCallBack( calcTime(nowSec) ); // 残り時間通知
         }},1000
     )
+
 };
 
 
 // 残り時間通知受け取り関数
 const tickFunc = ( time  )=>{
     const p = document.getElementById("timer");
+    if (time[3] == "0" && time[2] == "1"){
+        time[3] = 60;
+    }
     p.textContent = `残り${ time[3] }秒`;
 };
+
+
+const firstCountDown = (time) => {
+    const p = document.getElementById("countdown");
+}
+
+
+const firstEndCountDown = () => {
+    const p = document.getElementById("countdown").style;
+    p.display = "none";
+}

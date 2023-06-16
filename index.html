@@ -48,6 +48,15 @@
             /* 処理終了 ------------------------------------------------ */
             return ;
         }
+
+
+        document.addEventListener("keypress",keypress)
+        function keypress(e){
+            if (e.key == "Enter"){
+                page_transition();
+            }
+        }
+
     </script>
 
 </body>
