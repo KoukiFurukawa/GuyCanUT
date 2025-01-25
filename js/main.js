@@ -10,7 +10,7 @@ function getRandomInt(mn, mx) {
     const res = Math.floor(Math.random() * (max - min) + min);
     return res;
 }
-  
+
 
 
 /** ------------------------------------------------------------
