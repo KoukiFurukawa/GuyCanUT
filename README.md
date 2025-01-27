@@ -1,4 +1,5 @@
 ## 身内タイピングゲーム
+[遊ぶ際はこちらからどうそ](https://asobiba-typing.netlify.app/)
 <hr>
 
 ### 構成メモ
